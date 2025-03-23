@@ -1,0 +1,119 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Styles */
+
+  html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='16'><rect width='1' height='16' fill='%23d4be98'/></svg>"), auto;
+  }
+
+  body {
+    background-color: #1d2021;
+    color: #d4be98;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.5;
+    padding-bottom: 30px; /* Ensure status bar does not overlap content */
+  }
+
+  /* Style links on the contact page to have the same color, bold, and underlined */
+   body.contact-page .editor-content a {
+     color: inherit;
+     font-weight: bold;
+     text-decoration: underline;
+    }
+  
+  /* Top Navigation (Neovim-inspired Tabs) */
+  .top-nav {
+    background-color: #32302f;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .top-nav a {
+    text-decoration: none;
+    color: #d4be98;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+  }
+  
+  .top-nav a:hover {
+    background-color: #3c3836; /* Slightly lighter dark shade */
+  }
+  
+  .top-nav a.active {
+    border-bottom: 2px solid #d4be98;
+  }
+  
+  /* Editor Container */
+  .editor {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* Gutter for Dynamic Line Numbers */
+  .gutter {
+    width: 50px;
+    text-align: right;
+    margin-right: 25px;
+    padding-right: 10px;
+    user-select: none;
+    font-size: 0.9em;
+    color: #7daea3; /* Using the official blue from Gruvbox */
+  }
+  
+  .gutter div {
+    height: 1.5em; /* Match the line-height */
+  }
+  
+  /* Main Content Area */
+  .editor-content {
+    flex: 1;
+    white-space: pre-wrap;
+  }
+
+  .editor-content h2 a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Static Status Bar (Neovim Style) */
+  .status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #32302f;
+    color: #d4be98;
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .top-nav {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .editor {
+      flex-direction: row;
+      padding: 10px;
+    }
+    .gutter {
+      width: 40px;
+      padding-right: 5px;
+    }
+    .editor-content {
+      font-size: 0.9em;
+    }
+  }
